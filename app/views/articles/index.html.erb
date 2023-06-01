@@ -1,0 +1,33 @@
+<%= render "boot", article: @article %>
+
+
+<body class= " m-0 vh-100 row justify-content-center align-items-center">
+    <div class= "col-lg-8 mx-auto">
+        <div class = "card shadow">
+            <div class= "card-header">
+                <h1 class = "card-title text-center">Welcome!</h1>
+            </div>
+
+            <div class = "card-body ">
+                <p class ="fs-4 fw-bold">Articles previously done:</p>
+                    <ul class="list-inline">
+                        <% @articles.each do |article| %>
+                        
+                            <%= link_to article.title, article, class:"text-decoration-none list-inline-item mr-2"%>
+                        
+                        <% end %>
+                    </ul>
+
+                    <div class="text-center"> 
+                        <%= link_to "New Article", new_article_path, class: "btn btn-light text-decoration-none mx-auto" %> 
+                     </div>
+
+            </div>
+
+        </div>
+
+    </div>
+     
+</body>
+
+

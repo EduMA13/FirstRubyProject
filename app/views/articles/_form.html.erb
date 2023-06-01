@@ -1,0 +1,34 @@
+<%= form_with model: article do |form| %>
+
+<div> 
+
+  <div class="row">
+      <div class="col-md-6 text-start m-auto">
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% article.errors.full_messages_for(:title).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="col-md-6 text-end m-auto">
+        <%= link_to "Main Page", root_path, class: "btn btn-light" %>
+      </div>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" name="commit" value="Create Article" data-disable-with="Create Article" class="btn btn-light mx-auto">
+    Create/Edit article 
+    </button>
+  </div>
+
+</div>  
+<% end %>

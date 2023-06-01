@@ -1,0 +1,19 @@
+<%= render "boot", article: @article %>
+
+<body class= " m-0 vh-100 row justify-content-center align-items-center">
+    <div class= "col-lg-8 mx-auto">
+        <div class = "card shadow">
+                <div class = "card-header text-center">
+                <h1>Edit Article</h1>
+                </div>
+                <div class="card-body">
+                <%= render "form", article: @article %>
+                
+                </div>
+        </div>
+    </div>
+
+</body>
+
+
+
